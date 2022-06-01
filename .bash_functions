@@ -30,11 +30,13 @@ function prompt_command_fancy() {
         workingdir=$(echo $W | cut -d'/' -f1-$split | xargs -I{} echo {}"/../${W##*/}")
     fi
 
-	 # blue shell
+	 # blue promt
     # PS1="\[\e[38;5;255;48;5;21m\]${usersymbol}\u@\h\[\e[38;5;21;48;5;33m\]\[\e[38;5;255;48;5;33m\]${workingdir}${git}\[\e[38;5;33;48;5;39m\]\[\e[38;5;21;48;5;39m\] \A${exitsymbol}\e[0m\[\e[38;5;39m\e[m\]"
-	 # red shell
-	 PS1="\[\e[38;5;255;48;5;88m\]${usersymbol}\u@\h\[\e[38;5;88;48;5;124m\]\[\e[38;5;255;48;5;124m\]${workingdir}${git}\[\e[38;5;124;48;5;196m\]\[\e[38;5;224;48;5;196m\] \A${exitsymbol}\e[0m\[\e[38;5;196m\e[m\] "
-	 # green shell
+	 # red-grey promt
+	 PS1="\[\e[38;5;196;48;5;238m\]${usersymbol}\u@\h\[\e[38;5;238;48;5;0m\]\[\e[48;5;124;38;5;0m\] \[\e[38;5;255;48;5;124m\]${workingdir}${git} \[\e[38;5;124;48;5;196m\] \[\e[38;5;0;48;5;196m\] \A ${exitsymbol}\e[0m\[\e[38;5;196m\e[m\] "
+	 # red promt
+	 # PS1="\[\e[38;5;255;48;5;88m\]${usersymbol}\u@\h\[\e[38;5;88;48;5;124m\]\[\e[38;5;255;48;5;124m\]${workingdir}${git}\[\e[38;5;124;48;5;196m\]\[\e[38;5;224;48;5;196m\] \A${exitsymbol}\e[0m\[\e[38;5;196m\e[m\] "
+	 # green promt
 	 # PS1="\[\e[38;5;255;48;5;2m\]${usersymbol}\u@\h\[\e[38;5;2;48;5;40m\]\[\e[38;5;255;48;5;40m\]${workingdir}${git}\[\e[38;5;40;48;5;46m\]\[\e[38;5;2;48;5;46m\] \A${exitsymbol}\e[0m\[\e[38;5;46m\e[m\]"
     # PS1="${exitsymbol}${usersymbol} ${workingdir} ${git}"
 }
