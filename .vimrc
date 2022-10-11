@@ -18,4 +18,10 @@ syntax on
 set number
 
 " Set tab width to 3 columns.
-set tabstop=3
+set tabstop=4
+
+" When indenting with '>', use 4 spaces width
+set shiftwidth=4
+
+" On pressing tab, insert 4 spaces
+set expandtab
