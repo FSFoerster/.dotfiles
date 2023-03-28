@@ -5,7 +5,7 @@ add_newline = true
 format = """\
 [┌](245)\
 [  ](#dd4814)\
-[](245)\
+[](245)\
 $username\
 [♦](245)\
 $hostname\
