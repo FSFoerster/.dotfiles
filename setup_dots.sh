@@ -114,12 +114,13 @@ StarshipConfig_copy() {
 }
 
 Bashrc_star_querry() {
-    CopyStarBashrc="$(antwoord "Do you want to copy .bashrc? ${YN}")"
+    CopyStarBashrc="$(antwoord "Do you want to copy .bashrc and .bash_functions? ${YN}")"
 }
 Bashrc_star_copy() {
-    echo -n -e "Copying .bashrc\r"
+    echo -n -e "Copying .bashrc and .bash_functions\r"
     if [[ "${CopyStarBashrc}" = "yes" ]]; then
         yes | cp ./linux/starship/.bashrc ~/ >> /dev/null 2>&1
+        yes | cp ./linux/starship/.bash_functions ~/ >> /dev/null 2>&1
         echo_Done
     else
         echo_Skipped

@@ -1,12 +1,25 @@
 #!/usr/bin/env bash
-#
-# +-------------------------------------------------------------------------+
-# | .bashrc                                                                 |
-# +-------------------------------------------------------------------------+
-# | Copyright © 2019 Waldemar Schroeer                                      |
-# |                  waldemar.schroeer(at)rz-amper.de                       |
-# +-------------------------------------------------------------------------+
 
+if [[ -f ~/.bash_functions ]]; then
+    . ~/.bash_functions
+
+    case ${TERM} in
+        sshd|putty)
+            # legacy
+            export PROMT_COMMAND=promt_command_legacy
+            ;;
+        urxvt|st|st-256-color|xterm*|rxvt*|Eterm*|aterm|kterm|gnome*|interix|konsole*)
+            # starship
+            export PROMT_COMMAND=promt_command_starship
+            ;;
+        linux|screen*)
+            # legacy
+            export PROMT_COMMAND=promt_command_legacy
+            ;;
+    esac
+else
+    printf "ERROR: Missing .bash_functions!"
+fi
 
 # User specific aliases and functions
 alias vi='vim' 2>/dev/null
