@@ -36,6 +36,4 @@ alias claer='clear' 2>/dev/null
 alias clera='clear' 2>/dev/null
 alias yeet='exit' 2>/dev/null
 
-fortune | cowsay -n
-
 eval "$(starship init bash)"
