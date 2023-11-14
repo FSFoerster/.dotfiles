@@ -2,6 +2,7 @@
 
 
 # <#----------] Variables [----------#>
+
 datetime="$(date "+%Y-%m-%d-%H-%M-%S")"
 logfile="/tmp/ivanti_install_${datetime}.log"
 width=80
@@ -84,6 +85,7 @@ get_Distribution() {
         . /etc/os-release
         distribution=$NAME
         version=$VERSION_ID
+        echo "Your OS seems to be $NAME $VERSION_ID"
     else
         echo -e "\nError: I need /etc/os-release to figure what distribution this is."
         exit 1
@@ -159,6 +161,9 @@ Bashrc_legacy_copy() {
 }
 
 exa_querry() {
+    InstallExa="$(antwoord "Do you want to install exa? ${YN}")"
+}
+exa_install() {
     echo -n -e "Installing exa\r"
 	if [[ "${InstallExa}" = "yes" ]]; then
 		case ${distribution} in
@@ -214,6 +219,7 @@ if [[ "${Starship}" = "yes" ]]; then
     StarshipConfig_querry
     Bashrc_star_querry
     Vimrc_querry
+    exa_querry
         
     echo_title "Prepare"
 
@@ -222,6 +228,7 @@ if [[ "${Starship}" = "yes" ]]; then
     StarshipConfig_copy
     Bashrc_star_copy
     Vimrc_copy
+    exa_install
 else
     echo -n -e "Legacy will be used\r"
     Bashrc_legacy_querry
