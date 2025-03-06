@@ -42,8 +42,8 @@ style = "red"
 disabled = false
 
 [directory]
-truncation_length = 3
-truncation_symbol = "…/"
+truncation_length = 0
+#truncation_symbol = "…/"
 home_symbol = "ﱮ ~"
 style = "white bold"
 read_only_style = "197"
